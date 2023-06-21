@@ -1,0 +1,49 @@
+
+
+  <div class="container">
+	
+	<div class="table">
+		<div class="table-header">
+			<div class="head"><a  class="headrow" href="#">Image</a></div>
+			<div class="head"><a  class="headrow " href="#">Name</a></div>
+			<div class="head"><a  class="headrow " href="#">Price</a></div>
+			<div class="head"><a  class="headrow " href="#">Quantity</a></div>
+			<div class="head"><a class="headrow" href="#"></a></div>
+		</div>
+		<div class="table-content">	
+			<div class="table-row "  *ngFor="let item of products">		
+				<div class="data">  <img class="card-img-top" [src]="item.images[0]" alt="Card image cap"> 
+                </div>
+				<div class="data">{{item.title}}</div>
+				<div class="data">{{item.price | currency:'EGP'}}</div>
+				<div class="data"><div class="data">
+					<button (click)="increaseCounter(item.id)">+</button>
+					<span>{{item.quantity}}</span>
+					<button (click)="decreaseCounter(item.id)">-</button>
+				</div></div>
+				<div class="data"><i class=" fa fa-solid fa-trash fa-lg" (click)="removeItem(item)" style="color: #d43c16;"></i>
+                </div>
+			</div>
+		
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+<div *ngIf="products.length ==0">
+       
+        <div style="text-align: center; margin-top: 20px;">
+            <h4>Your cart is empty</h4>
+        </div>
+</div>
+
+<div >
+       
+    <div style="text-align: center; margin-top: 20px;">
+        <h4>Total price: {{totalPrice | currency}}</h4>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.out-of-stock {
+    color: red;
+  }
+  
+  .in-stock {
+    color: green;
+  }
+
+  button{
+
+  margin-right: 5px;  
+  }
+
+  

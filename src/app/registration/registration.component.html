@@ -1,0 +1,74 @@
+
+<div class="Registrationsection">
+
+    <div class="login-box">
+        <h2>Sign Up</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="submitReForm()" >
+
+            <div class="user-box mt-5">
+                <input type="text" id="name" name="name" formControlName="name" >
+                <label>Name </label>
+                <div id="nameHelp" *ngIf="registrationForm.controls['name'].touched && registrationForm.controls['name'].invalid" style="font-size: 17px; color: black;">
+                  <span *ngIf="registrationForm.controls['name'].errors?.['required']" >This Field Is required</span>
+
+        
+                </div>
+        
+              </div>
+          <div class="user-box mt-5">
+            <input type="email" id="email" name="email" formControlName="email">
+            <label>Email Address </label>
+            <div id="emailHelp" *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].invalid" style="font-size: 17px; color: black;">
+              <span *ngIf="registrationForm.controls['email'].errors?.['required']" >This Field Is required</span>
+              <span *ngIf="registrationForm.controls['email'].errors?.['pattern']" >invalid Data</span>
+    
+            </div>
+    
+          </div>
+
+
+           <div class="user-box mt-5">
+            <input type="text" id="username" name="username" formControlName="username">
+            <label>User Name </label> 
+            <div id="usernameHelp" *ngIf="registrationForm.controls['username'].touched && registrationForm.controls['username'].invalid" style="font-size: 17px; color: black;">
+              <span *ngIf="registrationForm.controls['username'].errors?.['required']" >This Field Is required</span>
+            
+              <span *ngIf="registrationForm.controls['username'].errors?.['cannotContainSpace']" >invalid Data</span>
+     
+            </div>
+    
+          </div>
+           <div class="user-box mt-5">
+            <input type="password"id="password" name="password" formControlName="password">
+            <label>Password</label> 
+             <div id="passwordHelp" *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].invalid" style="font-size: 17px; color: black;">
+              <span *ngIf="registrationForm.controls['password'].errors?.['required']" >This Field Is required</span>
+              <span *ngIf="registrationForm.controls['password'].errors?.['minLength']" >The minLength is 8</span>
+              <span *ngIf="registrationForm.controls['password'].errors?.['pattern']" >invalid Data</span>
+
+    
+            </div> 
+          </div> 
+
+         <div class="user-box mt-5">
+      <input type="password"id="confirmpassword" name="confirmpassword" formControlName = "confirmPassword"  >
+      <label>Confirm Password</label> 
+      <div id="passwordHelp" *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].invalid" style="font-size: 17px; color: black;">
+        <span *ngIf="registrationForm.controls['confirmPassword'].errors?.['required']" >This Field Is required</span>
+        <span *ngIf="registrationForm.controls['confirmPassword'].errors?.['confirmedValidator']" >Password and Confirm Password must be match</span>
+
+
+        
+   
+      </div>
+   </div> 
+          <button style="margin-left: 230px; width: 150px; margin-top: 30px;" type="submit" class="btn btn-outline-dark" >LogIn</button>
+    
+        </form>
+    <br> <br>
+        <a href="login" style="text-decoration: none; color: black; margin-left: 230px;"> Have Account?<span style="text-decoration: underline;">Login</span></a>
+    
+      </div>
+    </div>
+    
+

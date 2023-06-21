@@ -1,0 +1,32 @@
+
+<div class="loginsection">
+
+<div class="login-box">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)" >
+      <div class="user-box">
+        <input type="email" id="email" name="email" ngModel #email="ngModel" required   pattern="[^@\s]+@[^@\s]+\.[^@\s]+" >
+        <label>Email Address </label>
+        <div id="emailHelp" *ngIf="email.touched && email.invalid" style="font-size: 17px; color: black;">
+          <span *ngIf="email?.errors?.['required']" >This Field Is required</span>
+          <span *ngIf="email?.errors?.['pattern']" >invalid Data</span>
+
+        </div>
+
+      </div>
+      <div class="user-box mt-5">
+        <input type="password"id="password" name="password" ngModel #password="ngModel" required>
+        <label>Password</label>
+        <div id="passwordHelp" *ngIf="password.touched && password.invalid" style="font-size: 17px; color: black;">
+          <span *ngIf="email?.errors?.['required']" >This Field Is required</span>
+
+        </div>
+      </div>
+      <button style="margin-left: 230px; width: 150px; margin-top: 30px;" type="submit" class="btn btn-outline-dark"  [disabled]="loginForm.invalid" >LogIn</button>
+
+    </form>
+<br> <br>
+    <a href="registration"  style="text-decoration: none; color: black; margin-left: 200px;">Dont Have Account?<span style="text-decoration: underline;">Register</span></a>
+
+  </div>
+</div>

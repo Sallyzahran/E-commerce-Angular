@@ -1,0 +1,21 @@
+
+
+
+<div class="card" style="width: 25rem; height: 50rem;">
+    <img class="card-img-top" [src]="productItem.images[0]" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{productItem.title}}</h5>
+      <!-- <p class="card-text">{{productItem.date | date :'MMM YYY' }}</p> -->
+
+      <p class="card-text">{{productItem.category}}</p>
+      <p class="card-text">{{productItem.rating}}</p>
+
+
+
+      <p class="card-text" style="display: inline;">{{productItem.price | currency:'EGP'}}</p>
+      <!-- <p  class="card-text" [ngStyle]="{color: productItem.count >0?'green':'red'}" >{{productItem.count | count}}</p> -->
+<br> <br>
+    <button type="button" class="btn btn-danger" (click)="increaseCounter()" (click)="addtocart(productItem)" >Add To Cart</button>
+    <button type="button" class="btn btn-danger" (click)="emitToParent(productItem.id)" >Show Details</button>
+    </div>
+  </div>
